@@ -2,4 +2,12 @@
 //
 const getFormFields = require('../../../lib/get-form-fields');
 
-let data = getFormFields(event.target);
+const voidText = function() {
+let text = getFormFields(event.target);
+
+};
+
+
+const addHandlers() {
+  $('.twitter').on('submit', voidText);
+}
