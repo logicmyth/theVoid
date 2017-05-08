@@ -6,8 +6,9 @@ const voidText = function () {
   // console.log('voidText')
   const text = getFormFields(event.target)
   // console.log(text)
-  console.log(text)
-  $(':text').addClass('floating')
+  // console.log(text)
+  // $('.twitter').addClass('floating')
+  console.log($('.twitter').text())
 }
 
 const nameInput = document.getElementById('voidTwitter')
@@ -18,13 +19,18 @@ document.querySelector('form.pure-form').addEventListener('submit', function (e)
 
   console.log(nameInput.value.charAt(2))
   const text = getFormFields(event.target)
-  console.log($("#floatDiv").text());
-  $('.twitter').text.addClass('floating')
+  // console.log($("#floatDiv").text());
+  // $('.twitter').text.addClass('floating')
+
+   console.log($('#voidTwitter'))
+  // console.log($('form.pure-form input'))
 })
 
-const floatText = function () {
-
-}
+$('form.pure-form').on('submit', function (e) {
+  e.preventDefault()
+  $('form.pure-form input').css('color', 'red')
+  $('form.pure-form input').addClass('floating')
+})
 
 const addHandlers = function () {
   $('.twitterSubmit').on('click', voidText)
