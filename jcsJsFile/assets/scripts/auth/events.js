@@ -22,14 +22,14 @@ document.querySelector('form.pure-form').addEventListener('submit', function (e)
   // console.log($("#floatDiv").text());
   // $('.twitter').text.addClass('floating')
 
-   console.log($('#voidTwitter'))
+   console.log($('form.pure-form input'.value))
   // console.log($('form.pure-form input'))
 })
 
 $('form.pure-form').on('submit', function (e) {
   e.preventDefault()
   $('form.pure-form input').css('color', 'red')
-  $('form.pure-form input').addClass('floating')
+  $('form.pure-form input'[0].value).addClass('floating')
 })
 
 const addHandlers = function () {

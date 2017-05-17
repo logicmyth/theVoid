@@ -10,13 +10,39 @@
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.3/paper-full.js"></script>
+      <!-- Define inlined PaperScript associate it with  -->
+      <script type="text/paperscript" canvas="pillars">
+
+window.onload = function() {
+		// Get a reference to the canvas object
+		var canvas = document.getElementById('pillars');
+		// Create an empty project and a view for the canvas:
+		paper.setup(canvas);
+		// Create a Paper.js Path to draw a line into it:
+		var path = new paper.Path();
+		// Give the stroke a color
+		path.strokeColor = 'black';
+		var start = new paper.Point(100, 100);
+		// Move to start and draw a line from there
+		path.moveTo(start);
+		// Note that the plus operator on Point objects does not work
+		// in JavaScript. Instead, we need to call the add() function:
+		path.lineTo(start.add([ 200, -50 ]));
+		// Draw the view now:
+		paper.view.draw();
+	}
+</script>
     </head>
     <body class="container-fluid">
       <img src="img/void-banner.jpg">
       <p>an app for shouting</p>
 
-      <div class="void">
-      </div>
+      <!-- <div class="void">
+      </div> -->
+      <canvas id="pillars"></canvas>
+
       <div class="text-space">
       </div>
       <form class="pure-form">
