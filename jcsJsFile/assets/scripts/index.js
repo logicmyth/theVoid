@@ -3,6 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const events = require('./auth/events.js')
+const paper = require('paper')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -15,5 +16,6 @@ $(() => {
 require('./example')
 
 $(() => {
-  events.addHandlers();
-});
+  paper.install(window);
+  events.addHandlers()
+})
