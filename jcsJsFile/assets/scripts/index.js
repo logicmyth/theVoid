@@ -16,6 +16,6 @@ $(() => {
 require('./example')
 
 $(() => {
-  paper.install(window);
+  paper.install(window)
   events.addHandlers()
 })
