@@ -29,11 +29,12 @@ const onPaperSetup = () => {
   paper.setup('pillars');
 
 
-  var path = new Path.Circle({
-  	center: view.center,
-  	radius: 70,
-  	fillColor: 'red'
-  });
+var path = new Path.Circle({
+  center: view.center,
+  radius: 70,
+  fillColor: 'red'
+})
+
   // // set canvas to 256 x 256 pixels
   // let canvasDimension = 256;
   // paper.view.viewSize = (canvasDimension, canvasDimension);
@@ -50,17 +51,22 @@ const onPaperSetup = () => {
   //   paper.project.activeLayer.children[i].fillColor = pixelColor;
   // };
 //
- paper.view.onFrame = function(event) {
+//  paper.view.onFrame = function(event) {
+// 	// Each frame, change the fill color of the path slightly by
+// 	// adding 1 to its hue:
+// 	path.fillColor.hue += 1;
+//   console.console.log('papper');
+// }
+//   // draws the view
+view.onFrame = function(event) {
 	// Each frame, change the fill color of the path slightly by
 	// adding 1 to its hue:
 	path.fillColor.hue += 1;
-  console.console.log('papper');
 }
-//   // draws the view
-  paper.view.draw();
+  //paper.view.draw();
+}
 
-
-};
+// };
 //
 // const onGetPaletteColor = function(event) {
 //   pixelColor = $(event.target).css('background-color');
@@ -158,6 +164,7 @@ const onPaperSetup = () => {
 
 const addHandlers = () => {
    onPaperSetup();
+  // onFrame();
   // $('.palette-item').on('click', onGetPaletteColor);
   // $(document).on('click', '.move-to-canvas', onMoveToCanvas);
   // $('.clear-drawing').on('click', onClearDrawing);
