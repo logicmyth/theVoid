@@ -29,11 +29,15 @@ const onPaperSetup = () => {
   paper.setup('pillars');
 
 
-var path = new Path.Circle({
-  center: view.center,
-  radius: 70,
-  fillColor: 'red'
-})
+ var path = new Path.Rectangle([75, 75], [100, 100]);
+ path.strokeColor = 'black'
+}
+//animated circle color change
+//Path.Circle({
+//   center: view.center,
+//   radius: 70,
+//   fillColor: 'red'
+// })
 
   // // set canvas to 256 x 256 pixels
   // let canvasDimension = 256;
@@ -58,13 +62,13 @@ var path = new Path.Circle({
 //   console.console.log('papper');
 // }
 //   // draws the view
-view.onFrame = function(event) {
-	// Each frame, change the fill color of the path slightly by
-	// adding 1 to its hue:
-	path.fillColor.hue += 1;
-}
-  //paper.view.draw();
-}
+// view.onFrame = function(event) {
+// 	// Each frame, change the fill color of the path slightly by
+// 	// adding 1 to its hue:
+// 	path.fillColor.hue += 1;
+// }
+//   //paper.view.draw();
+// }
 
 // };
 //
@@ -177,4 +181,4 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers
-};
+}
