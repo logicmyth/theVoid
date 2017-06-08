@@ -28,10 +28,12 @@ const onPaperSetup = () => {
   // Create empty project and view for the canvas:
   paper.setup('pillars');
 
-
- var path = new Path.Rectangle([75, 75], [100, 100]);
+//var pathTop = new Path.Rectangle([110, 40], [150, 10])
+ var path = new Path.Rectangle([105, 35], [150, 85]);
  path.strokeColor = 'black'
+ path.splitAt(100, 50)
 }
+
 //animated circle color change
 //Path.Circle({
 //   center: view.center,
